@@ -1,0 +1,25 @@
+{
+  "name": "@edgenets/utils",
+  "version": "0.3.12",
+  "description": "Edgenets utilities package containing common types and utilities.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Edgenets",
+  "license": "MIT",
+  "files": [
+    "dist/",
+    "README.md",
+    "tsconfig.base.json",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "eslint --fix && tsc -p tsconfig.json",
+    "test": "echo 'Skip Tests'",
+    "public": "pnpm build && npm version patch && npm publish --access public"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "vitest": "^3.2.4"
+  }
+}

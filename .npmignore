@@ -1,0 +1,21 @@
+# 忽略 TypeScript 配置文件
+tsconfig.json
+
+# 忽略 ESLint 配置文件
+eslint.config.js
+.eslintrc.json
+
+# 忽略源代码（通常会发布编译后的文件）
+src/
+
+# 忽略测试文件
+tests/
+test/
+
+# 忽略 node_modules
+node_modules/
+
+# 忽略其他配置文件和环境文件
+*.log
+*.env
+*.local
