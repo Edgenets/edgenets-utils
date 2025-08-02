@@ -1,26 +1,26 @@
-import { describe, it, expect, vi } from 'vitest'
-import { logger } from '../../src/logger/index'
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
+import { ConsoleLogger } from '../../src/logger/console-logger'
 
-describe('logger', () => {
-  it('should log info by default', () => {
-    const spy = vi.spyOn(console, 'info').mockImplementation(() => {})
-    logger.info('test info')
-    expect(spy).toHaveBeenCalledWith(expect.stringContaining('INFO'), 'test info')
+describe('ConsoleLogger', () => {
+  let spy: ReturnType<typeof vi.spyOn>
+
+  beforeEach(() => {
+    spy = vi.spyOn(console, 'info').mockImplementation(() => {})
+  })
+
+  afterEach(() => {
     spy.mockRestore()
   })
 
-  it('should not log debug by default', () => {
-    const spy = vi.spyOn(console, 'log').mockImplementation(() => {})
-    logger.debug('test debug')
+  it('does not log if level too low', () => {
+    const logger = new ConsoleLogger('warn')
+    logger.info('This should not appear')
     expect(spy).not.toHaveBeenCalled()
-    spy.mockRestore()
   })
 
-  it('should log debug when level is debug', () => {
-    logger.setLevel('debug')
-    const spy = vi.spyOn(console, 'debug').mockImplementation(() => {})
-    logger.debug('debug mode on')
-    expect(spy).toHaveBeenCalled()
-    spy.mockRestore()
+  it('logs info if level allows', () => {
+    const logger = new ConsoleLogger('debug')
+    logger.info('Hello world')
+    expect(spy).toHaveBeenCalledWith(expect.stringContaining('[INFO] Hello world'))
   })
 })

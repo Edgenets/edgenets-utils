@@ -48,3 +48,17 @@ function checkToken(token?: string) {
   }
 }
 ```
+
+### Logging handling
+
+```typescript
+import { getLogger, setGlobalLogger, createConsoleLogger } from '@edgenets/utils'
+
+// 设置全局等级
+setGlobalLogger(createConsoleLogger('debug'))
+
+const logger = getLogger()
+
+logger.info('App started')
+logger.debug('Debug message')
+```
