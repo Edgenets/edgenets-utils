@@ -17,6 +17,11 @@ edgenets-utils/
 │   │   ├── format.ts         # 格式化相关函数
 │   │   ├── diff.ts           # 时间差计算
 │   │   └── index.ts          # 模块导出
+│   ├── errors/        → 异常封装
+│   │   ├── codes.ts          # 错误枚举 ErrorCode
+│   │   ├── messages.ts       # 可选：错误码 → 默认提示
+│   │   ├── app-error.ts      # 错误基类 AppError
+│   │   └── index.ts          # 统一导出
 │   ├── validation/    → 基于 zod，但可插拔（保持 adapter 模式）
 │   ├── constants/     → 项目常量、枚举（跨模块复用）
 │   ├── types/         → 基础类型工具（如 DeepPartial、Awaitable）
@@ -28,4 +33,18 @@ edgenets-utils/
 ├── package.json       # name: @edgenets/utils
 ├── tsconfig.json
 └── README.md
+```
+
+## Usage
+
+### Error handling
+
+```typescript
+import { AppError, ErrorCode } from '@edgenets/utils'
+
+function checkToken(token?: string) {
+  if (!token) {
+    throw new AppError(ErrorCode.AUTH_VAL_TOKEN_INVALID)
+  }
+}
 ```
