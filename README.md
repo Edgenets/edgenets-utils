@@ -5,6 +5,12 @@ Provides logging, type helpers, environment config, validation, and other reusab
 
 > Designed for Firebase Cloud Functions and pnpm monorepo projects.
 
+## Development
+
+```bash
+git submodule add git@github.com:Edgenets/edgenets-utils.git packages/utils
+```
+
 ## Table of contents
 
 ```bash
@@ -72,3 +78,4 @@ const id = NanoIdUtil.generateDefault(12)         // ab8X0kTzG7Q9
 const custom = NanoIdUtil.generateCustom(6, 'xyz') // xyyzyz
 const numericId = NanoIdUtil.generateNumberId()    // 1073132153242091
 ```
+
