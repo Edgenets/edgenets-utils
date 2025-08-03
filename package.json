@@ -1,24 +1,40 @@
 {
   "name": "@edgenets/utils",
-  "version": "0.3.12",
+  "version": "0.4.0",
   "description": "Edgenets utilities package containing common types and utilities.",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "author": "Edgenets",
+  "author": "Mob <mob@edgenets.io> (https://github.com/Edgenets)",
   "license": "MIT",
+  "keywords": [
+    "typescript",
+    "edgenets",
+    "utils"
+  ],
   "files": [
     "dist/",
     "README.md",
     "tsconfig.base.json",
     "LICENSE"
   ],
+  "homepage": "https://github.com/Edgenets/edgenets-utils#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Edgenets/edgenets-utils.git",
+    "directory": ""
+  },
   "scripts": {
     "build": "eslint --fix && tsc -p tsconfig.json",
     "test": "echo 'Skip Tests'",
-    "public": "pnpm build && npm version patch && npm publish --access public"
+    "public": "npm run build && npm version patch && npm publish --access public"
   },
   "devDependencies": {
+    "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
+    "@typescript-eslint/parser": "^8.38.0",
+    "@typescript-eslint/eslint-plugin": "^8.38.0",
     "@types/node": "^24.1.0",
     "vitest": "^3.2.4"
   }

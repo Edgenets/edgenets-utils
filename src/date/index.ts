@@ -1,2 +1,2 @@
-export * from './format.js'
-export * from './diff.js'
+export * from "./format.js";
+export * from "./diff.js";

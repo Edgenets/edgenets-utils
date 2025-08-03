@@ -1,4 +1,4 @@
-import { ErrorCode } from './codes.js'
+import { ErrorCode } from "./codes.js";
 
 export const ErrorMessages: Record<ErrorCode, string> = {
   [ErrorCode.USR_VAL_MISSING_FIELDS]: "缺少必要字段",
@@ -22,4 +22,4 @@ export const ErrorMessages: Record<ErrorCode, string> = {
   [ErrorCode.API_VAL_RESPONSE_INVALID]: "外部接口响应无效",
   [ErrorCode.API_CONN_FAILED]: "外部接口连接失败",
   [ErrorCode.API_RATE_LIMIT_EXCEEDED]: "API 调用频率超出限制",
-}
+};

@@ -1,14 +1,14 @@
-import { ErrorCode } from './codes.js'
-import { ErrorMessages } from './messages.js'
+import { ErrorCode } from "./codes.js";
+import { ErrorMessages } from "./messages.js";
 
 export class AppError extends Error {
   constructor(
     public readonly code: ErrorCode,
     message?: string,
-    public readonly cause?: unknown
+    public readonly cause?: unknown,
   ) {
-    super(message || ErrorMessages[code])
-    this.name = 'AppError'
+    super(message || ErrorMessages[code]);
+    this.name = "AppError";
   }
 
   toJSON() {
@@ -16,6 +16,6 @@ export class AppError extends Error {
       error: this.name,
       code: this.code,
       message: this.message,
-    }
+    };
   }
 }

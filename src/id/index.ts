@@ -1,1 +1,1 @@
-export * from './nano-id.util.js'
+export * from "./nano-id.util.js";
