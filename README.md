@@ -62,3 +62,13 @@ const logger = getLogger()
 logger.info('App started')
 logger.debug('Debug message')
 ```
+
+### ID generation
+
+```typescript
+import { NanoIdUtil } from '@edgenets/utils'
+
+const id = NanoIdUtil.generateDefault(12)         // ab8X0kTzG7Q9
+const custom = NanoIdUtil.generateCustom(6, 'xyz') // xyyzyz
+const numericId = NanoIdUtil.generateNumberId()    // 1073132153242091
+```
