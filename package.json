@@ -1,6 +1,6 @@
 {
   "name": "@edgenets/utils",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Edgenets utilities package containing common types and utilities.",
   "type": "module",
   "main": "dist/index.js",
